@@ -142,7 +142,7 @@ def the_battle(enemy, hero):
             if enemy.health > 0:
                 # Goblin attacks hero
                 enemy.attack(hero)
-                print("The goblin does {} damage to you.".format(enemy.power))
+                print("The {enemy} does {} damage to you.".format(enemy.power))
                 print(hero.alive())
                 if hero.health >= 0:
                     print("You are alive ")
