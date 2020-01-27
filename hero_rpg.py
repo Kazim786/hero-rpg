@@ -100,7 +100,7 @@ Ali = Hero("Ali",40 , 20, 0.2)
 Marhab = Goblin("Marhab",60, 10, 0.0)
 Medic = Medic("Medic",90, 20, 0.2) #This is an obj of medic class. Medic class is the child of the Character class
 # So self in Medic class will refer to the Medic character.
-shadow = Shadow("Shadow" float('inf'), 20, .1)
+shadow = Shadow("Shadow" 1, 20, .1)
 
 def the_battle(enemy, hero):
         while enemy.alive() and hero.alive():
