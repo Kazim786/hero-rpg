@@ -190,6 +190,10 @@ def the_battle(enemy, hero):
 
                 if(hero.armor > 0):
                     hero.armor -= enemy.power
+                    if(hero.armor <= 0):
+                        print(f'{hero.health} is intact and {hero.armor} is finished ')
+                    else: 
+                        pass
                 else:
                     hero.health -= enemy.power
                 print(f'The {enemy.name} does {enemy.power} damage to you.')
