@@ -87,8 +87,11 @@ class Medic(Character):
         super().attack(other_guy)
 
 class Shadow(Character):
-    def shadow_health:
+    def shadow_health(self, heros_attack):
         if(random.random() <= self.probability):
+            self.health -= heros_attack.power
+        else:
+            heros_attack.power = 0
         
 
 
@@ -100,7 +103,7 @@ Ali = Hero("Ali",40 , 20, 0.2)
 Marhab = Goblin("Marhab",60, 10, 0.0)
 Medic = Medic("Medic",90, 20, 0.2) #This is an obj of medic class. Medic class is the child of the Character class
 # So self in Medic class will refer to the Medic character.
-shadow = Shadow("Shadow" 1, 20, .1)
+Shadow = Shadow("Shadow" 1, 20, .1)
 
 def the_battle(enemy, hero):
         while enemy.alive() and hero.alive():
@@ -138,11 +141,13 @@ def the_battle(enemy, hero):
                     print ("Play again ")
 
 def main():
-    choice = input("Press 1 to fight Marhab, Press 2 to fight Medic ")
+    choice = input("Press 1 to fight Marhab, Press 2 to fight Medic, Press 3 to fight Shadow ")
     if(choice == "1"):
         enemy = Marhab
     elif(choice == "2"):
         enemy = Medic
+    elif(choice == "3")
+        enemy = Shadow
     else:
         print("Pick 1 or 2 ")
     hero = Ali
