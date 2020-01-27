@@ -150,7 +150,7 @@ def the_battle(enemy, hero):
                     print ("Play again ")
 
 def main():
-    choice = input("Press 1 to fight Marhab, Press 2 to fight Medic, Press 3 to fight Shadow ")
+    choice = input("Press 1 to fight Marhab, Press 2 to fight Medic, Press 3 to fight Shadow, Press 4 to fight Shadow ")
     if(choice == "1"):
         enemy = Marhab
     elif(choice == "2"):
@@ -160,7 +160,7 @@ def main():
     elif(choice == "4"):
         enemy = Zombie
     else:
-        print("Pick 1 or 2 or 3")
+        print("Pick 1 or 2 or 3, or 4")
     hero = Ali
     the_battle(enemy, hero)
 
