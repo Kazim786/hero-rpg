@@ -44,8 +44,13 @@ class Character:
 
 
 class Hero(Character): #DONT FORGET YOU PUT HEALTH AND POWER AS STRINGS
-    pass
-    # def __init__(self, health, power):
+    def __init__(self, name, health, power, probability, armor, Evade):
+        super.__init__(self, name, health, power, probability)
+        self.armor = armor
+        self.Evade = Evade
+        Evade = 0
+    #Adding an attribute to a child class 
+    
      
         # super().__init__(health, power)
         
@@ -85,7 +90,7 @@ class Goblin(Character):
  
 class Medic(Character):
     def medic_health(self):
-        if(random.random() <= self.probability):
+        if(random.random() >= self.probability):
             self.health += 2
             print("Health recuperated ")
         else:
@@ -112,12 +117,32 @@ class Zombie(Character):
 
             
 
-Meryem = Hero("Meryem",40 , 20, 0.2)
+Meryem = Hero("Meryem",60 , 20, 0.2, 7, 0)
 Marhab = Goblin("Marhab",60, 10, 0.0)
-Medic = Medic("Medic",90, 20, 0.2) #This is an obj of medic class. Medic class is the child of the Character class
+Medic = Medic("Medic",90, 30, 0.2) #This is an obj of medic class. Medic class is the child of the Character class
 # So self in Medic class will refer to the Medic character.
 Shadow = Shadow("Shadow", 1, 20, .1)
 Zombie = Zombie("Zombie", float('inf'), 10, 0.0)
+
+
+
+class store(Hero):
+    def the_store(self):
+        buy = print(input("What would you like to buy? Enter, SuperTonic, Armor, Evade"))
+        if(buy == "SuperTonic"):
+            recuperation = self.health + 10
+            return(recuperation)
+        elif(buy == "Armor"):
+            self.armor += 2
+            return(self.armor)
+        elif(buy == "Evade"):
+            self.Evade += 2
+
+
+    
+
+
+
 
 def the_battle(enemy, hero):
         while enemy.alive() and hero.alive():
@@ -136,6 +161,17 @@ def the_battle(enemy, hero):
                     print("Bastard is alive ")
                 else:
                     print("He is dead")
+                    if enemy == "Marhab":
+                        print("You win $500")
+                    elif enemy == "Medic":
+                        print("You win $1000")
+                    elif enemy == "Shadow":
+                        print("You win $1200")
+                    elif enemy == "Zombie":
+                        print("You win $14000")
+                    else:
+                        pass
+
             elif raw_input == "2":
                 pass
             elif raw_input == "3":
@@ -147,6 +183,15 @@ def the_battle(enemy, hero):
             if enemy.health > 0:
                 # Goblin attacks hero
                 enemy.attack(hero)
+                if (hero.Evade > 0):
+                    if(random.random() >= self.probability):
+                        pass
+                    ##need help with evade 
+
+                if(hero.armor > 0):
+                    hero.armor -= enemy.power
+                else:
+                    hero.health -= enemy.power
                 print(f'The {enemy.name} does {enemy.power} damage to you.')
                 print(hero.alive())
                 if hero.health > 0:
