@@ -22,8 +22,16 @@ class Character:
         else:
             damage = self.power
             print("Attack WAS NOT doubled ")
+        if(other_attacked.name == "Shadow"):
+            if(random.random() >= self.probability):
+                damage = 0 
+                print("Shadow has dodged ")
         other_attacked.health -= damage
+        
             
+            
+        
+        
         
     def alive(self):
         if(self.health > 0):
@@ -87,11 +95,8 @@ class Medic(Character):
         super().attack(other_guy)
 
 class Shadow(Character):
-    def shadow_health(self, heros_attack):
-        if(random.random() <= self.probability):
-            self.health -= heros_attack.power
-        else:
-            heros_attack.power = 0
+    pass
+        
 
 
 class Zombie(Character):
