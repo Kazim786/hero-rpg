@@ -107,7 +107,7 @@ class Zombie(Character):
 
             
 
-Ali = Hero("Ali",40 , 20, 0.2)
+Meryem = Hero("Meryem",40 , 20, 0.2)
 Marhab = Goblin("Marhab",60, 10, 0.0)
 Medic = Medic("Medic",90, 20, 0.2) #This is an obj of medic class. Medic class is the child of the Character class
 # So self in Medic class will refer to the Medic character.
@@ -144,13 +144,12 @@ def the_battle(enemy, hero):
                 enemy.attack(hero)
                 print(f'The {enemy.name} does {enemy.power} damage to you.')
                 print(hero.alive())
-                if hero.health >= 0:
+                if hero.health > 0:
                     print("You are alive ")
-                else:
+                elif hero.health == 0:
                     print ("Play again ")
-
 def main():
-    choice = input("Press 1 to fight Marhab, Press 2 to fight Medic, Press 3 to fight Shadow, Press 4 to fight Zombie ")
+    choice = input("Press 1 to fight Marhab,\n Press 2 to fight Medic,\n Press 3 to fight Shadow,\n Press 4 to fight Zombie ")
     if(choice == "1"):
         enemy = Marhab
     elif(choice == "2"):
@@ -161,7 +160,7 @@ def main():
         enemy = Zombie
     else:
         print("Pick 1 or 2 or 3, or 4")
-    hero = Ali
+    hero = Meryem
     the_battle(enemy, hero)
 
 
