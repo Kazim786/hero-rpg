@@ -155,10 +155,12 @@ def main():
         enemy = Marhab
     elif(choice == "2"):
         enemy = Medic
-    elif(choice == "3")
+    elif(choice == "3"):
         enemy = Shadow
+    elif(choice == "4"):
+        enemy = Zombie
     else:
-        print("Pick 1 or 2 ")
+        print("Pick 1 or 2 or 3")
     hero = Ali
     the_battle(enemy, hero)
 
