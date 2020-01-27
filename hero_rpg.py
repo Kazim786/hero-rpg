@@ -92,6 +92,10 @@ class Shadow(Character):
             self.health -= heros_attack.power
         else:
             heros_attack.power = 0
+
+
+class Zombie(Character):
+    def zombie_Health(self, heros_attack )
         
 
 
@@ -155,6 +159,6 @@ def main():
 
 
 
-   
+
 
 main()
