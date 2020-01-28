@@ -184,8 +184,8 @@ def the_battle(enemy, hero):
                 # Goblin attacks hero
                 enemy.attack(hero)
                 if (hero.Evade > 0):
-                    if(random.random() >= self.probability):
-                        pass
+                    # if(random.random() >= self.probability):
+                    #     pass
                     ##need help with evade 
 
                 if(hero.armor > 0):
